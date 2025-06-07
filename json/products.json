@@ -1,0 +1,34 @@
+[
+  {
+    "id": "prod1",
+    "storeId": "store1",
+    "name": "Magic Wand",
+    "description": "A slightly used magic wand, sparks erratically.",
+    "price": 29.99,
+    "imagePlaceholderUrl": "https://placehold.co/300x200/EAB308/white?text=Magic+Wand"
+  },
+  {
+    "id": "prod2",
+    "storeId": "store1",
+    "name": "Cheshire Catnip",
+    "description": "Premium quality, guaranteed to make your feline friend grin.",
+    "price": 9.99,
+    "imagePlaceholderUrl": "https://placehold.co/300x200/34D399/white?text=Catnip"
+  },
+  {
+    "id": "prod3",
+    "storeId": "store2",
+    "name": "Indestructible Hammer",
+    "description": "Cannot be broken. Or your money back (it won't break).",
+    "price": 199.99,
+    "imagePlaceholderUrl": "https://placehold.co/300x200/60A5FA/white?text=Hammer"
+  },
+  {
+    "id": "prod4",
+    "storeId": "store2",
+    "name": "Talking Wrench Set",
+    "description": "They offer unsolicited advice while you work.",
+    "price": 49.99,
+    "imagePlaceholderUrl": "https://placehold.co/300x200/F87171/white?text=Wrenches"
+  }
+]

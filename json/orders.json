@@ -1,0 +1,13 @@
+[
+  {
+    "id": "order1",
+    "storeId": "store1",
+    "customerName": "Mad Hatter",
+    "customerAddress": "Tea Party Lane, Wonderland",
+    "items": [
+      { "productId": "prod1", "quantity": 1, "price": 29.99 }
+    ],
+    "totalAmount": 29.99,
+    "status": "Pending WhatsApp"
+  }
+]

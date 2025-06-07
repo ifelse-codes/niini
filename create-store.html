@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Store - MySimpleStore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100">
+    <header class="bg-gray-800 text-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold">MySimpleStore</a>
+            <nav id="main-nav" class="flex space-x-4 items-center">
+                <!-- Navigation will be populated by JavaScript -->
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16 flex justify-center items-center" style="min-height: calc(100vh - 128px);">
+        <div class="w-full max-w-lg bg-white p-8 shadow-xl rounded-lg">
+            <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Create Your Store</h1>
+            <form id="create-store-form">
+                <div class="mb-6">
+                    <label for="storeName" class="block text-gray-700 text-sm font-bold mb-2">Store Name:</label>
+                    <input type="text" id="storeName" name="storeName" required class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500" placeholder="Alice's Magical Emporium">
+                </div>
+
+                <div class="mb-6">
+                    <label for="whatsappNumber" class="block text-gray-700 text-sm font-bold mb-2">WhatsApp Number (with country code):</label>
+                    <input type="tel" id="whatsappNumber" name="whatsappNumber" required class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500" placeholder="+12345678900">
+                    <p class="text-xs text-gray-600 mt-1">Include your country code, e.g., +1 for USA.</p>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="w-full bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 ease-in-out text-lg focus:outline-none focus:shadow-outline">
+                        Create Store
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-4">
+        <p>&copy; 2023 MySimpleStore. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
