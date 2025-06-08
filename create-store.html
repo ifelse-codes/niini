@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth font-sans">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +7,48 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 min-h-screen flex flex-col">
-    <header class="site-header">
-        <div class="container">
-            <a href="index.html" class="logo">Niini</a>
-            <nav id="main-nav" class="main-nav">
-                <!-- Navigation will be populated by JavaScript -->
+<body class="font-sans antialiased text-slate-700 bg-white dark:text-slate-300 dark:bg-slate-900 min-h-screen flex flex-col">
+    <header class="fixed w-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm shadow-md z-50">
+        <div class="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+            <a href="index.html" class="font-heading text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-secondary-500">Niini</a>
+
+            <nav class="hidden md:flex items-center space-x-4 lg:space-x-8">
+                <a href="index.html" class="font-medium text-slate-700 hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-400 transition-colors duration-150 py-2">Home</a>
+                <a href="stores.html" class="font-medium text-slate-700 hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-400 transition-colors duration-150 py-2">Stores</a>
+                <a href="products.html" class="font-medium text-slate-700 hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-400 transition-colors duration-150 py-2">Products</a>
+                <a href="create-store.html" class="font-medium text-slate-700 hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-400 transition-colors duration-150 py-2">Create Store</a>
             </nav>
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon dark:hidden"></i>
-                <i class="fas fa-sun hidden dark:block"></i>
-            </button>
+
+            <div class="flex items-center space-x-2 md:space-x-4">
+                <button id="theme-toggle" class="p-2 rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-slate-700 dark:hover:text-slate-300 transition-colors duration-150">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+                <a href="login.html" class="hidden md:block px-4 py-2 rounded-full bg-primary-100 dark:bg-slate-800 text-primary-700 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-slate-700 transition-colors text-sm font-medium">Login</a>
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-full text-slate-600 dark:text-slate-400 hover:bg-slate-100 hover:text-slate-700 dark:hover:bg-slate-700 dark:hover:text-slate-300 transition-colors duration-150" aria-label="Toggle menu" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="menu-icon h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="close-icon hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden bg-white dark:bg-slate-900 shadow-lg absolute w-full left-0 hidden top-full z-40">
+            <div class="container mx-auto px-4 py-4 space-y-3">
+                <a href="index.html" class="block py-2 px-4 rounded-md font-medium text-slate-700 hover:bg-slate-100 hover:text-primary-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-primary-400 transition-colors duration-150">Home</a>
+                <a href="stores.html" class="block py-2 px-4 rounded-md font-medium text-slate-700 hover:bg-slate-100 hover:text-primary-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-primary-400 transition-colors duration-150">Stores</a>
+                <a href="products.html" class="block py-2 px-4 rounded-md font-medium text-slate-700 hover:bg-slate-100 hover:text-primary-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-primary-400 transition-colors duration-150">Products</a>
+                <a href="create-store.html" class="block py-2 px-4 rounded-md font-medium text-slate-700 hover:bg-slate-100 hover:text-primary-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-primary-400 transition-colors duration-150">Create Store</a>
+                <a href="login.html" class="block py-2 px-4 rounded-md font-medium text-slate-700 hover:bg-slate-100 hover:text-primary-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-primary-400 transition-colors duration-150">Login</a>
+                <a href="register.html" class="block py-2 px-4 rounded-md font-medium text-slate-700 hover:bg-slate-100 hover:text-primary-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-primary-400 transition-colors duration-150">Register</a>
+            </div>
         </div>
     </header>
 
-    <main class="flex-grow container py-8 px-4 flex justify-center items-center">
+    <main class="flex-grow container py-8 px-4 pt-20 md:pt-24 flex justify-center items-center">
         <div class="w-full max-w-lg animate-fade-in">
             <h1 class="section-title mb-8 text-center">Create Your Store</h1>
             <div class="card">
