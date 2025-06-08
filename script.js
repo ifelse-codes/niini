@@ -125,37 +125,60 @@ function renderProducts(filterStoreId = null) {
          headingText = "Welcome to our Marketplace!";
     }
 
-
     if (productListHeading) {
         productListHeading.textContent = headingText;
     }
 
     if (!productsToDisplay || productsToDisplay.length === 0) {
         if (filterStoreId) {
-            productListContainer.innerHTML = `<p class="text-gray-600 col-span-full text-center">This store has no products listed currently.</p>`;
+            productListContainer.innerHTML = `
+                <div class="col-span-full text-center py-8">
+                    <div class="text-gray-500 mb-4"><i class="fas fa-store-slash text-4xl"></i></div>
+                    <p class="text-gray-600 text-lg">This store has no products listed currently.</p>
+                    <p class="text-gray-500 mt-2">Check back later or browse other stores.</p>
+                </div>`;
         } else {
-            productListContainer.innerHTML = '<p class="text-gray-600 col-span-full text-center">No products available at the moment. Please check back later.</p>';
+            productListContainer.innerHTML = `
+                <div class="col-span-full text-center py-8">
+                    <div class="text-gray-500 mb-4"><i class="fas fa-shopping-basket text-4xl"></i></div>
+                    <p class="text-gray-600 text-lg">No products available at the moment.</p>
+                    <p class="text-gray-500 mt-2">Please check back later or create your own store!</p>
+                </div>`;
         }
         return;
     }
 
     productsToDisplay.forEach(product => {
         const productItem = document.createElement('div');
-        // Tailwind classes for product card
-        productItem.className = 'product-item bg-white shadow-lg rounded-lg overflow-hidden flex flex-col';
+        // Modern card styling with hover effects
+        productItem.className = 'card animate-fade-in hover:shadow-lg transition';
+        
+        // Get store info for the product
+        const store = allStores.find(s => s.id === product.storeId);
+        const storeName = store ? store.name : 'Unknown Store';
+        
         productItem.innerHTML = `
-            <a href="product.html?id=${product.id}" class="block hover:opacity-75 transition-opacity duration-300">
-                <img src="${product.imagePlaceholderUrl || 'https://placehold.co/300x200/ccc/fff?text=No+Image'}" alt="${product.name}" class="w-full h-48 object-cover">
+            <a href="product.html?id=${product.id}" class="block">
+                <img src="${product.imagePlaceholderUrl || 'https://placehold.co/300x200/ccc/fff?text=No+Image'}" 
+                     alt="${product.name}" 
+                     class="card-image transition hover:scale-105 duration-300">
             </a>
-            <div class="p-4 flex flex-col flex-grow"> {/* Added flex flex-col flex-grow */}
-                <a href="product.html?id=${product.id}" class="block hover:text-blue-600 transition-colors duration-300">
-                    <h3 class="text-lg font-semibold mb-2">${product.name}</h3>
+            <div class="card-content">
+                <a href="product.html?id=${product.id}" class="block">
+                    <h3 class="card-title">${product.name}</h3>
                 </a>
-                <p class="text-gray-700 text-sm mb-1 flex-grow">${product.description || 'No description available.'}</p> {/* Added flex-grow */}
-                <p class="text-xl font-bold text-blue-600 mb-3 mt-auto">$${product.price.toFixed(2)}</p> {/* Added mt-auto */}
-                <button onclick="addToCart('${product.id}')" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
-                    Add to Cart
-                </button>
+                <p class="card-description">${product.description || 'No description available.'}</p>
+                <div class="flex items-center justify-between mb-3">
+                    <p class="card-price">$${product.price.toFixed(2)}</p>
+                    <span class="text-sm text-gray-500">
+                        <i class="fas fa-store mr-1"></i> ${storeName}
+                    </span>
+                </div>
+                <div class="card-footer">
+                    <button onclick="addToCart('${product.id}')" class="btn btn-primary w-full">
+                        <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+                    </button>
+                </div>
             </div>
         `;
         productListContainer.appendChild(productItem);
@@ -577,19 +600,45 @@ function displayStoreList() {
         return;
     }
 
-    let html = '<h2 class="text-2xl font-bold text-center text-gray-700 mb-6">Browse by Store</h2>';
-    html += '<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">';
-
+    storeListContainer.innerHTML = ''; // Clear existing content
+    
+    // Create section title
+    const sectionTitle = document.createElement('h2');
+    sectionTitle.className = 'section-title mb-8';
+    sectionTitle.textContent = 'Browse Our Stores';
+    storeListContainer.appendChild(sectionTitle);
+    
+    // Create store grid
+    const storeGrid = document.createElement('div');
+    storeGrid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6';
+    
     allStores.forEach(store => {
-        html += `
-            <a href="index.html?store_id=${store.id}" class="block bg-white p-4 shadow-md hover:shadow-lg rounded-lg text-center transition-all duration-300 ease-in-out">
-                <h3 class="text-lg font-semibold text-indigo-600">${store.name}</h3>
+        const storeCard = document.createElement('div');
+        storeCard.className = 'store-card animate-fade-in';
+        
+        storeCard.innerHTML = `
+            <a href="index.html?store_id=${store.id}" class="block h-full">
+                <div class="store-card-header">
+                    <img src="${store.logo || 'https://cdn.pixabay.com/photo/2014/04/03/00/41/house-309113_1280.png'}" 
+                         alt="${store.name}" 
+                         class="store-logo mx-auto transition-transform duration-300 hover:scale-105">
+                </div>
+                <div class="store-card-content">
+                    <h3 class="store-card-title">${store.name}</h3>
+                    <p class="store-card-description">${store.description || 'Visit our store to see our products.'}</p>
+                    <div class="store-card-footer">
+                        <span class="text-sm text-primary-600 font-medium">
+                            <i class="fas fa-arrow-right mr-1"></i> Browse Products
+                        </span>
+                    </div>
+                </div>
             </a>
         `;
+        
+        storeGrid.appendChild(storeCard);
     });
-
-    html += '</div>';
-    storeListContainer.innerHTML = html;
+    
+    storeListContainer.appendChild(storeGrid);
 }
 
 

@@ -1,14 +1,42 @@
 [
   {
     "id": "user1",
-    "email": "user1@example.com",
+    "email": "michael@example.com",
     "password": "password123",
-    "name": "Alice Wonderland"
+    "name": "Michael Chen",
+    "avatar": "https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_1280.png",
+    "bio": "Tech enthusiast and entrepreneur with a passion for innovative gadgets."
   },
   {
     "id": "user2",
-    "email": "user2@example.com",
+    "email": "sophia@example.com",
     "password": "password456",
-    "name": "Bob The Builder"
+    "name": "Sophia Rodriguez",
+    "avatar": "https://cdn.pixabay.com/photo/2014/04/03/10/32/user-310807_1280.png",
+    "bio": "Coffee connoisseur and small business owner with a love for artisanal brews."
+  },
+  {
+    "id": "user3",
+    "email": "james@example.com",
+    "password": "password789",
+    "name": "James Wilson",
+    "avatar": "https://cdn.pixabay.com/photo/2016/04/01/10/11/avatar-1299805_1280.png",
+    "bio": "Interior designer specializing in functional and aesthetic home office spaces."
+  },
+  {
+    "id": "user4",
+    "email": "emma@example.com",
+    "password": "password101",
+    "name": "Emma Johnson",
+    "avatar": "https://cdn.pixabay.com/photo/2016/08/20/05/38/avatar-1606916_1280.png",
+    "bio": "Wellness advocate and creator of natural, handcrafted spa products."
+  },
+  {
+    "id": "user5",
+    "email": "customer@example.com",
+    "password": "customerpass",
+    "name": "Alex Customer",
+    "avatar": "https://cdn.pixabay.com/photo/2016/08/31/11/54/user-1633249_1280.png",
+    "bio": "Regular shopper looking for quality products from independent sellers."
   }
 ]

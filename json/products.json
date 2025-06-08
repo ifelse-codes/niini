@@ -2,33 +2,97 @@
   {
     "id": "prod1",
     "storeId": "store1",
-    "name": "Magic Wand",
-    "description": "A slightly used magic wand, sparks erratically.",
-    "price": 29.99,
-    "imagePlaceholderUrl": "https://placehold.co/300x200/EAB308/white?text=Magic+Wand"
+    "name": "Premium Wireless Headphones",
+    "description": "Immerse yourself in crystal-clear sound with our noise-cancelling wireless headphones. Perfect for music lovers and professionals alike.",
+    "price": 129.99,
+    "imagePlaceholderUrl": "https://cdn.pixabay.com/photo/2018/09/17/14/27/headphones-3683983_1280.jpg"
   },
   {
     "id": "prod2",
     "storeId": "store1",
-    "name": "Cheshire Catnip",
-    "description": "Premium quality, guaranteed to make your feline friend grin.",
-    "price": 9.99,
-    "imagePlaceholderUrl": "https://placehold.co/300x200/34D399/white?text=Catnip"
+    "name": "Smart Fitness Tracker",
+    "description": "Track your steps, heart rate, sleep quality and more with this sleek, waterproof fitness band. Syncs with your smartphone for real-time health insights.",
+    "price": 59.99,
+    "imagePlaceholderUrl": "https://cdn.pixabay.com/photo/2020/04/22/10/14/smart-watch-5077743_1280.jpg"
   },
   {
     "id": "prod3",
-    "storeId": "store2",
-    "name": "Indestructible Hammer",
-    "description": "Cannot be broken. Or your money back (it won't break).",
-    "price": 199.99,
-    "imagePlaceholderUrl": "https://placehold.co/300x200/60A5FA/white?text=Hammer"
+    "storeId": "store1",
+    "name": "Portable Bluetooth Speaker",
+    "description": "Take your music anywhere with this compact yet powerful Bluetooth speaker. Features 12-hour battery life and water-resistant design.",
+    "price": 49.99,
+    "imagePlaceholderUrl": "https://cdn.pixabay.com/photo/2019/08/13/20/34/speaker-4404752_1280.jpg"
   },
   {
     "id": "prod4",
     "storeId": "store2",
-    "name": "Talking Wrench Set",
-    "description": "They offer unsolicited advice while you work.",
-    "price": 49.99,
-    "imagePlaceholderUrl": "https://placehold.co/300x200/F87171/white?text=Wrenches"
+    "name": "Artisan Coffee Beans",
+    "description": "Ethically sourced, medium roast coffee beans with notes of chocolate and caramel. Perfect for your morning brew.",
+    "price": 14.99,
+    "imagePlaceholderUrl": "https://cdn.pixabay.com/photo/2016/03/30/21/59/coffee-beans-1291656_1280.jpg"
+  },
+  {
+    "id": "prod5",
+    "storeId": "store2",
+    "name": "Handcrafted Ceramic Mug Set",
+    "description": "Set of 4 unique, handmade ceramic mugs. Each piece is individually crafted with attention to detail and finished with a durable glaze.",
+    "price": 39.99,
+    "imagePlaceholderUrl": "https://cdn.pixabay.com/photo/2015/05/31/10/54/coffee-791439_1280.jpg"
+  },
+  {
+    "id": "prod6",
+    "storeId": "store2",
+    "name": "Gourmet Tea Collection",
+    "description": "Luxury tea sampler with 6 premium loose leaf varieties. Includes Earl Grey, Jasmine Green, Chamomile, English Breakfast, Chai, and Peppermint.",
+    "price": 24.99,
+    "imagePlaceholderUrl": "https://cdn.pixabay.com/photo/2015/07/02/20/37/cup-829527_1280.jpg"
+  },
+  {
+    "id": "prod7",
+    "storeId": "store3",
+    "name": "Minimalist Desk Lamp",
+    "description": "Modern LED desk lamp with adjustable brightness and color temperature. Features sleek design and touch controls.",
+    "price": 34.99,
+    "imagePlaceholderUrl": "https://cdn.pixabay.com/photo/2017/04/06/15/15/lamp-2208931_1280.jpg"
+  },
+  {
+    "id": "prod8",
+    "storeId": "store3",
+    "name": "Ergonomic Office Chair",
+    "description": "Comfortable office chair with lumbar support, adjustable height, and breathable mesh back. Perfect for your home office.",
+    "price": 159.99,
+    "imagePlaceholderUrl": "https://cdn.pixabay.com/photo/2017/08/02/01/01/office-2569217_1280.jpg"
+  },
+  {
+    "id": "prod9",
+    "storeId": "store3",
+    "name": "Wooden Desk Organizer",
+    "description": "Handcrafted wooden desk organizer with multiple compartments for stationery, devices, and accessories. Keeps your workspace tidy and stylish.",
+    "price": 29.99,
+    "imagePlaceholderUrl": "https://cdn.pixabay.com/photo/2017/08/07/16/39/still-life-2605328_1280.jpg"
+  },
+  {
+    "id": "prod10",
+    "storeId": "store4",
+    "name": "Natural Scented Candle",
+    "description": "Hand-poured soy wax candle with essential oils. Long-lasting fragrance creates a calming atmosphere in any room.",
+    "price": 19.99,
+    "imagePlaceholderUrl": "https://cdn.pixabay.com/photo/2016/05/31/11/36/candle-1426310_1280.jpg"
+  },
+  {
+    "id": "prod11",
+    "storeId": "store4",
+    "name": "Luxury Bath Bombs Set",
+    "description": "Set of 6 handmade bath bombs with natural ingredients and essential oils. Transform your bath into a spa experience.",
+    "price": 22.99,
+    "imagePlaceholderUrl": "https://cdn.pixabay.com/photo/2018/03/10/14/58/bath-3214793_1280.jpg"
+  },
+  {
+    "id": "prod12",
+    "storeId": "store4",
+    "name": "Organic Face Mask Collection",
+    "description": "Set of 3 organic face masks for different skin types. Made with natural ingredients to nourish and rejuvenate your skin.",
+    "price": 34.99,
+    "imagePlaceholderUrl": "https://cdn.pixabay.com/photo/2016/01/19/15/48/woman-1149362_1280.jpg"
   }
 ]

@@ -2,13 +2,33 @@
   {
     "id": "store1",
     "userId": "user1",
-    "name": "Alice's Magical Emporium",
-    "whatsappNumber": "+12345678900"
+    "name": "TechTrends Electronics",
+    "whatsappNumber": "+12345678900",
+    "description": "Your one-stop shop for the latest gadgets and electronics. We offer premium quality tech products at competitive prices.",
+    "logo": "https://cdn.pixabay.com/photo/2017/01/13/01/22/mobile-1976104_1280.png"
   },
   {
     "id": "store2",
     "userId": "user2",
-    "name": "Bob's Hardware Hub",
-    "whatsappNumber": "+19876543211"
+    "name": "Brew & Sip Coffee Co.",
+    "whatsappNumber": "+19876543211",
+    "description": "Artisanal coffee beans, premium teas, and handcrafted accessories for coffee enthusiasts and tea lovers.",
+    "logo": "https://cdn.pixabay.com/photo/2017/08/07/22/57/coffee-2608864_1280.png"
+  },
+  {
+    "id": "store3",
+    "userId": "user3",
+    "name": "Modern Home Office",
+    "whatsappNumber": "+18765432100",
+    "description": "Ergonomic furniture and stylish accessories to create your perfect home office environment.",
+    "logo": "https://cdn.pixabay.com/photo/2014/04/03/00/41/house-309113_1280.png"
+  },
+  {
+    "id": "store4",
+    "userId": "user4",
+    "name": "Serenity Spa Essentials",
+    "whatsappNumber": "+17654321099",
+    "description": "Luxury bath and body products made with natural ingredients. Transform your home into a personal spa retreat.",
+    "logo": "https://cdn.pixabay.com/photo/2017/01/31/23/42/animal-2028258_1280.png"
   }
 ]

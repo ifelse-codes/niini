@@ -3,54 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - MySimpleStore</title>
+    <title>Register - Niini</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-100">
-    <header class="bg-gray-800 text-white shadow-md">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold">MySimpleStore</a>
-            <nav id="main-nav" class="flex space-x-4 items-center">
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 min-h-screen flex flex-col">
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo">Niini</a>
+            <nav id="main-nav" class="main-nav">
                 <!-- Navigation will be populated by JavaScript -->
             </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon dark:hidden"></i>
+                <i class="fas fa-sun hidden dark:block"></i>
+            </button>
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-16 flex justify-center items-center" style="min-height: calc(100vh - 128px);">
-        <div class="w-full max-w-md bg-white p-8 shadow-xl rounded-lg">
-            <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Create an Account</h1>
-            <form id="register-form">
-                <div class="mb-6">
-                    <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Full Name:</label>
-                    <input type="text" id="name" name="name" required class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500" placeholder="Alice Wonderland">
+    <main class="flex-grow flex items-center justify-center px-4 py-12">
+        <div class="auth-card animate-fade-in">
+            <div class="auth-card-header">
+                <h1 class="auth-title">Create Account</h1>
+                <p class="auth-subtitle">Join our community today</p>
+            </div>
+            
+            <form id="register-form" class="auth-form">
+                <div class="form-group">
+                    <label for="name" class="form-label">Full Name</label>
+                    <div class="input-group">
+                        <span class="input-icon"><i class="fas fa-user"></i></span>
+                        <input type="text" id="name" name="name" required 
+                               class="form-input" placeholder="Your name">
+                    </div>
                 </div>
 
-                <div class="mb-6">
-                    <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email Address:</label>
-                    <input type="email" id="email" name="email" required class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500" placeholder="alice@example.com">
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <div class="input-group">
+                        <span class="input-icon"><i class="fas fa-envelope"></i></span>
+                        <input type="email" id="email" name="email" required 
+                               class="form-input" placeholder="you@example.com">
+                    </div>
                 </div>
 
-                <div class="mb-6">
-                    <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password:</label>
-                    <input type="password" id="password" name="password" required class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500" placeholder="******************">
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="input-group">
+                        <span class="input-icon"><i class="fas fa-lock"></i></span>
+                        <input type="password" id="password" name="password" required 
+                               class="form-input" placeholder="••••••••">
+                    </div>
                 </div>
 
-                <div class="text-center">
-                    <button type="submit" class="w-full bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 ease-in-out text-lg focus:outline-none focus:shadow-outline">
-                        Register
-                    </button>
-                </div>
-                <p class="text-center text-gray-600 text-sm mt-6">
-                    Already have an account? <a href="login.html" class="text-blue-500 hover:text-blue-700 font-semibold">Login here</a>.
+                <button type="submit" class="btn btn-accent w-full">
+                    <i class="fas fa-user-plus mr-2"></i> Create Account
+                </button>
+                
+                <p class="auth-footer-text">
+                    Already have an account? <a href="login.html" class="text-link">Sign in</a>
                 </p>
             </form>
         </div>
     </main>
 
-    <footer class="bg-gray-800 text-white text-center p-4">
-        <p>&copy; 2023 MySimpleStore. All rights reserved.</p>
-    </footer>
+    <footer class="site-footer">
+         <div class="container">
+             <p>&copy; 2023 Niini. All rights reserved.</p>
+         </div>
+     </footer>
 
-    <script src="script.js"></script>
+     <script src="script.js"></script>
+     <script>
+         // Dark mode toggle functionality
+         document.getElementById('theme-toggle').addEventListener('click', function() {
+             document.documentElement.classList.toggle('dark');
+             localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+         });
+         
+         // Check for saved theme preference or respect OS preference
+         if (localStorage.getItem('theme') === 'dark' || 
+             (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+             document.documentElement.classList.add('dark');
+         }
+     </script>
 </body>
 </html>

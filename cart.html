@@ -3,44 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart - MySimpleStore</title>
+    <title>Shopping Cart - Niini</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-100">
-    <header class="bg-gray-800 text-white shadow-md">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold">MySimpleStore</a>
-            <nav id="main-nav" class="flex space-x-4 items-center">
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 min-h-screen flex flex-col">
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo">Niini</a>
+            <nav id="main-nav" class="main-nav">
                 <!-- Navigation will be populated by JavaScript -->
             </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon dark:hidden"></i>
+                <i class="fas fa-sun hidden dark:block"></i>
+            </button>
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-8">
-        <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Your Shopping Cart</h1>
-        <div class="cart-container bg-white p-6 md:p-8 shadow-lg rounded-lg">
-            <div class="cart-items">
-                <!-- Cart items will be rendered here by JavaScript -->
-                <p class="text-gray-600 text-center">Loading cart...</p>
-            </div>
-            <div class="mt-6 border-t pt-4">
-                <div class="flex justify-end items-center">
-                    <h3 class="text-xl font-semibold text-gray-800 mr-4">Total:</h3>
-                    <span id="cart-total" class="text-2xl font-bold text-blue-600">$0.00</span>
+    <main class="flex-grow container py-8 px-4">
+        <section class="animate-fade-in">
+            <h1 class="section-title mb-8">Your Shopping Cart</h1>
+            
+            <div class="card">
+                <div class="cart-items p-4">
+                    <!-- Cart items will be rendered here by JavaScript -->
+                    <div class="flex justify-center items-center py-8">
+                        <div class="animate-pulse-slow text-center">
+                            <i class="fas fa-shopping-cart text-4xl text-primary-500 mb-4"></i>
+                            <p class="text-gray-600 dark:text-gray-400">Loading your cart...</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="mt-6 text-right">
-                    <a href="checkout.html" class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out text-lg">
-                        Proceed to Checkout
-                    </a>
+                
+                <div class="card-footer border-t border-gray-200 dark:border-gray-700 p-4">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-xl font-semibold">Total</h3>
+                        <span id="cart-total" class="text-2xl font-bold text-primary-600 dark:text-primary-400">$0.00</span>
+                    </div>
+                    
+                    <div class="flex justify-end">
+                        <a href="checkout.html" class="btn btn-accent">
+                            <i class="fas fa-credit-card mr-2"></i> Proceed to Checkout
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
-    <footer class="bg-gray-800 text-white text-center p-4 mt-8">
-        <p>&copy; 2023 MySimpleStore. All rights reserved.</p>
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2023 Niini. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Dark mode toggle functionality
+        document.getElementById('theme-toggle').addEventListener('click', function() {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+        });
+        
+        // Check for saved theme preference or respect OS preference
+        if (localStorage.getItem('theme') === 'dark' || 
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
 </body>
 </html>

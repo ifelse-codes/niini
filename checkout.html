@@ -3,51 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - MySimpleStore</title>
+    <title>Checkout - Niini</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-100">
-    <header class="bg-gray-800 text-white shadow-md">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold">MySimpleStore</a>
-            <nav id="main-nav" class="flex space-x-4 items-center">
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 min-h-screen flex flex-col">
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo">Niini</a>
+            <nav id="main-nav" class="main-nav">
                 <!-- Navigation will be populated by JavaScript -->
             </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon dark:hidden"></i>
+                <i class="fas fa-sun hidden dark:block"></i>
+            </button>
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-8">
-        <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Checkout</h1>
-        <div class="max-w-lg mx-auto bg-white p-6 md:p-8 shadow-lg rounded-lg">
-            <form id="checkout-form">
-                <div class="mb-6">
-                    <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Full Name:</label>
-                    <input type="text" id="name" name="name" required class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500" placeholder="Alice Wonderland">
-                </div>
+    <main class="flex-grow container py-8 px-4">
+        <section class="animate-fade-in max-w-lg mx-auto">
+            <h1 class="section-title mb-8">Checkout</h1>
+            
+            <div class="card">
+                <div class="card-body">
+                    <form id="checkout-form" class="space-y-6">
+                        <div class="form-group">
+                            <label for="name" class="form-label">
+                                <i class="fas fa-user text-primary-500 mr-2"></i> Full Name
+                            </label>
+                            <input type="text" id="name" name="name" required 
+                                class="form-input" 
+                                placeholder="Alice Wonderland">
+                        </div>
 
-                <div class="mb-6">
-                    <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email Address:</label>
-                    <input type="email" id="email" name="email" required class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500" placeholder="alice@example.com">
-                </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">
+                                <i class="fas fa-envelope text-primary-500 mr-2"></i> Email Address
+                            </label>
+                            <input type="email" id="email" name="email" required 
+                                class="form-input" 
+                                placeholder="alice@example.com">
+                        </div>
 
-                <div class="mb-6">
-                    <label for="address" class="block text-gray-700 text-sm font-bold mb-2">Shipping Address:</label>
-                    <textarea id="address" name="address" rows="4" required class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500" placeholder="123 Tea Party Lane, Wonderland"></textarea>
-                </div>
+                        <div class="form-group">
+                            <label for="address" class="form-label">
+                                <i class="fas fa-map-marker-alt text-primary-500 mr-2"></i> Shipping Address
+                            </label>
+                            <textarea id="address" name="address" rows="4" required 
+                                class="form-textarea" 
+                                placeholder="123 Tea Party Lane, Wonderland"></textarea>
+                        </div>
 
-                <div class="text-center">
-                    <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out text-lg focus:outline-none focus:shadow-outline">
-                        Place Order via WhatsApp
-                    </button>
+                        <div class="text-center pt-4">
+                            <button type="submit" class="btn btn-accent w-full md:w-auto">
+                                <i class="fab fa-whatsapp mr-2"></i> Place Order via WhatsApp
+                            </button>
+                        </div>
+                    </form>
                 </div>
-            </form>
-        </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="bg-gray-800 text-white text-center p-4 mt-8">
-        <p>&copy; 2023 MySimpleStore. All rights reserved.</p>
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2023 Niini. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Dark mode toggle functionality
+        document.getElementById('theme-toggle').addEventListener('click', function() {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+        });
+        
+        // Check for saved theme preference or respect OS preference
+        if (localStorage.getItem('theme') === 'dark' || 
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
 </body>
 </html>
